@@ -1,4 +1,8 @@
 
-/bin
-/Obj
+../bin
+../Obj
 .vs
+/AdvancedConcepts/obj
+/HRAdministrationAPI/obj
+/AdvancedConcepts/bin/Debug/net5.0
+/HRAdministrationAPI/bin/Debug/net5.0
