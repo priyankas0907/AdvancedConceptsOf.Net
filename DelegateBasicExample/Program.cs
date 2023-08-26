@@ -10,16 +10,27 @@ namespace DelegateBasicExample
         delegate void LogDel(string text);
         static void Main(string[] args)
         {
-            LogDel logDel = new LogDel(LogToFile);DigitShapes 
-            logDel("PS");
-        }
+            Logger log= new Logger();
+            LogDel logToScreen, logToFile;
 
-        static void LogToScreen(string text)
+            logToFile = new LogDel(log.LogToFile);
+            logToScreen = new LogDel(log.LogToScreen);
+
+            LogDel multiLogDel = logToFile + logToScreen;
+            multiLogDel("My text");
+            Console.ReadKey();
+        }
+         
+    }
+
+    public class Logger
+    {
+        public void LogToScreen(string text)
         {
             Console.WriteLine($"{DateTime.Now}: {text}");
         }
 
-        static void LogToFile(string text)
+        public void LogToFile(string text)
         {
             using (StreamWriter sw = new StreamWriter(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Log.txt"), true))
             {
