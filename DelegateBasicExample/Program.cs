@@ -17,8 +17,13 @@ namespace DelegateBasicExample
             logToScreen = new LogDel(log.LogToScreen);
 
             LogDel multiLogDel = logToFile + logToScreen;
-            multiLogDel("My text");
+            Log(multiLogDel,"My text");
             Console.ReadKey();
+        }
+
+        static void Log(LogDel logDel, string text)
+        {
+            logDel(text);
         }
          
     }
