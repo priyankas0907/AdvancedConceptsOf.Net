@@ -1,6 +1,5 @@
-
-../bin
-../Obj
+**/bin/*
+**/Obj/*
 .vs
 /AdvancedConcepts/obj
 /HRAdministrationAPI/obj
