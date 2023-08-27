@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolHRAdministration", "A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRAdministrationAPI", "HRAdministrationAPI\HRAdministrationAPI.csproj", "{0EE2A6BD-A2E2-49B0-9609-A836FFAF6C31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateBasicExample", "DelegateBasicExample\DelegateBasicExample.csproj", "{81F34DC4-672E-4B5A-BCBD-0AC972402C20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegateBasicExample", "DelegateBasicExample\DelegateBasicExample.csproj", "{81F34DC4-672E-4B5A-BCBD-0AC972402C20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CovarianceandContraVariance", "CovarianceandContraVariance\CovarianceandContraVariance.csproj", "{FA9AF381-23D3-42FD-A69D-2A7C61166B45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{81F34DC4-672E-4B5A-BCBD-0AC972402C20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81F34DC4-672E-4B5A-BCBD-0AC972402C20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81F34DC4-672E-4B5A-BCBD-0AC972402C20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA9AF381-23D3-42FD-A69D-2A7C61166B45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA9AF381-23D3-42FD-A69D-2A7C61166B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA9AF381-23D3-42FD-A69D-2A7C61166B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA9AF381-23D3-42FD-A69D-2A7C61166B45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
