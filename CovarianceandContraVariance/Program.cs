@@ -2,19 +2,50 @@
 DelegatesClass.GetIceCarDetails();
 public static class DelegatesClass
 {
-    delegate Car CarFactoryDel(int id, string name);
-
+    delegate Car CarFactoryDel(int id, string name); //Covariannce , return type is the base class
+    delegate void LogIceCarDetails(IceCar carDetails); // Contravariance, parameters are derived class
+    delegate void LogEvCarDetails(EvCar carDetails);// Contravariance, parameters are derived class
     public static void GetIceCarDetails()
     {
         CarFactoryDel carFactoryDel = CarFactory.ReturnIceCar;
         Car iceCar = carFactoryDel(1, "Audi R8");
         Console.WriteLine($"Object type : {iceCar.GetType()}");
         Console.WriteLine($"Car Details : {iceCar.GetCarDetail()}");
+        LogIceCarDetails logdel = LogCarDetails;
+        logdel(iceCar as IceCar);
 
         carFactoryDel = CarFactory.ReturnEvCar;
         Car evCar = carFactoryDel(2, "tesla");
         Console.WriteLine($"Object type: {evCar.GetType()}");
         Console.WriteLine($"Car Details : {evCar.GetCarDetail()}");
+       
+
+        LogEvCarDetails logdel2 = LogCarDetails;
+        logdel2(evCar as EvCar);
+
+        Console.ReadKey();
+
+
+
+    }
+
+    static void LogCarDetails(Car car) //Contravariance , Parameter of target method is base class
+    {
+            Console.WriteLine("Logs");
+        if (car is IceCar)
+        {
+            Console.WriteLine($"Object type {car.GetType()}");
+            Console.WriteLine($"Object type {car.GetCarDetail()}");
+        }
+        else if (car is EvCar)
+        {
+            Console.WriteLine($"Object type {car.GetType()}");
+            Console.WriteLine($"Object type {car.GetCarDetail()}");
+        }
+        else
+        {
+            throw new ArgumentException();
+        }
     }
 
     //public static void GetEvCarDetails(CarFactoryDel carFactoryDel)
@@ -30,8 +61,8 @@ public static class DelegatesClass
 
 public static class CarFactory
 {
-    public static IceCar ReturnIceCar(int id, string name) => new IceCar { Id = id, Name = name };
-    public static EvCar ReturnEvCar(int id, string name) => new EvCar { Id = id, Name = name };
+    public static IceCar ReturnIceCar(int id, string name) => new IceCar { Id = id, Name = name }; //Covariance , return type of target method is dervied class
+    public static EvCar ReturnEvCar(int id, string name) => new EvCar { Id = id, Name = name }; //Covariance , return type of target method is dervied class
 }
 
 public abstract class Car
